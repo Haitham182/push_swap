@@ -1,8 +1,9 @@
-NAME = 
+NAME = push_swap
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
+LIBFT = libft/libft.a
 
 SRCS = 
 
@@ -10,9 +11,11 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)	
 
+$(LIBFT) :
+	@make -C libft
 
-$(NAME) : $(OBJS)
-	    @ar rcs $(NAME) $(OBJS)
+$(NAME) : $(LIBFT) $(OBJS)
+	$(CC) $(CFLAGS) $(LIBFT) $(OBJS) -o $@
 
 %.o: %.c
 	@echo "[CC] $<"
@@ -20,9 +23,11 @@ $(NAME) : $(OBJS)
 
 clean:
 	@rm -f $(OBJS)
+	@make -C libft clean
 
 fclean: clean
 	@rm -f $(NAME)
+	@make -C libft fclean
 
 re: fclean all
 
