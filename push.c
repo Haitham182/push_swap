@@ -6,7 +6,7 @@
 /*   By: hmuqasqu <hmuqasqu@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/10 12:08:45 by hmuqasqu          #+#    #+#             */
-/*   Updated: 2026/10/10 22:48:00 by Haitham          ###   ########.fr       */
+/*   Updated: 2026/10/11 14:07:44 by hmuqasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,16 @@ void	swap(t_stack *stk)
 	stk->head->next = temp;
 	if (!temp->next) //if there is only two nodes in the stack
 		stk->last = temp;
+}
+void	rotate(t_stack *stk)
+{
+	t_node	*temp;
+	
+	if (!stk || !stk->head || !stk->head->next)
+		return ;
+	temp = stk->head;
+	stk->head = temp->next;
+	stk->last->next = temp;
+	stk->last = temp;
+	temp->next = NULL;
 }
