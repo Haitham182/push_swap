@@ -6,7 +6,7 @@
 /*   By: hmuqasqu <hmuqasqu@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/10 10:09:45 by hmuqasqu          #+#    #+#             */
-/*   Updated: 2026/10/10 21:49:17 by Haitham          ###   ########.fr       */
+/*   Updated: 2026/10/11 14:49:37 by hmuqasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_node
 {
 	int				number;
 	struct s_node	*next;
+	struct s_node	*prev;
 }	t_node;
 
 typedef struct s_stack

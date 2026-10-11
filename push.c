@@ -6,7 +6,7 @@
 /*   By: hmuqasqu <hmuqasqu@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/10 12:08:45 by hmuqasqu          #+#    #+#             */
-/*   Updated: 2026/10/11 14:18:30 by hmuqasqu         ###   ########.fr       */
+/*   Updated: 2026/10/11 16:49:46 by hmuqasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_node	*lstnew_node(int number)
 		return (NULL);
 	node->number = number;
 	node->next = NULL;
+	node->prev = NULL;
 	return (node);
 }
 
@@ -33,6 +34,7 @@ t_stack	*lstnew_stack(void)
 		return (NULL);
 	stack->head = NULL;
 	stack->last = NULL;
+	return (stack);
 }
 
 void	push(t_stack *dest, t_stack *source)
@@ -43,12 +45,17 @@ void	push(t_stack *dest, t_stack *source)
 		return ;
 	temp = source->head;
 	source->head = source->head->next;
-	temp->next = dest->head;
-	dest->head = temp;
-	if (!dest->last)
-		dest->last = dest->head;
-	if (source->last == temp)
+	if (source->head)
+		source->head->prev = NULL;
+	else
 		source->last = NULL;
+	temp->next = dest->head;
+	temp->prev = NULL;
+	if (dest->head)
+		dest->head->prev = temp;
+	else
+		dest->last = temp;
+	dest->head = temp;
 }
 
 void	swap(t_stack *stk)
@@ -59,9 +66,13 @@ void	swap(t_stack *stk)
 		return ;
 	temp = stk->head;
 	stk->head = stk->head->next;
-	temp->next = temp->next->next;
+	stk->head->prev = NULL;
+	temp->next = stk->head->next;
+	if (temp->next) //to make sure there is more than 2 nodes
+		stk->head->next->prev = temp;
 	stk->head->next = temp;
-	if (!temp->next) //if there is only two nodes in the stack
+	temp->prev = stk->head;
+	if (!temp->next)
 		stk->last = temp;
 }
 
@@ -73,7 +84,9 @@ void	rotate(t_stack *stk)
 		return ;
 	temp = stk->head;
 	stk->head = temp->next;
+	stk->head->prev = NULL;
 	stk->last->next = temp;
-	stk->last = temp;
+	temp->prev = stk->last;
 	temp->next = NULL;
+	stk->last = temp;
 }
