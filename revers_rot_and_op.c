@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rot.c                                      :+:      :+:    :+:   */
+/*   revers_rot_and_op.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmuqasqu <hmuqasqu@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/11 14:34:45 by hmuqasqu          #+#    #+#             */
-/*   Updated: 2026/10/12 10:05:14 by hmuqasqu         ###   ########.fr       */
+/*   Updated: 2026/10/13 18:01:01 by Haitham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	reverse_rot(t_stack *stk)
 	stk->head = temp;
 }
 
-void	op_ra(t_stack *a)
+void	op_sa(t_stack *a)
 {
 	if (!a || !a->head || !a->head->next)
 		return ;
@@ -35,21 +35,23 @@ void	op_ra(t_stack *a)
 	write(1, "ra\n", 3);
 }
 
-void	op_rb(t_stack *b)
+void	op_sb(t_stack *b)
 {
 	if (!b || !b->head || !b->head->next)
 		return ;
 	swap(b);
 	write (1, "rb\n", 3);
 }
-void op_pa(t_stack *a, t_stack *b)
+
+void	op_pa(t_stack *a, t_stack *b)
 {
 	if (!a || !b || !b->head)
 		return ;
 	push(a, b);
 	write (1, "pa\n", 3);
 }
-void op_pb(t_stack *b, t_stack *a)
+
+void	op_pb(t_stack *b, t_stack *a)
 {
 	if (!a || !b || !a->head)
 		return ;

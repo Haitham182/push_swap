@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op3.c                                              :+:      :+:    :+:   */
+/*   op2.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmuqasqu <hmuqasqu@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 10:36:02 by hmuqasqu          #+#    #+#             */
-/*   Updated: 2026/10/12 10:42:54 by hmuqasqu         ###   ########.fr       */
+/*   Updated: 2026/10/13 17:50:39 by Haitham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,19 @@ void	op_rrb(t_stack *b)
 		return ;
 	reverse_rot(b);
 	write (1, "rrb\n", 4);
+}
+
+void	delete_stack(t_stack stk)
+{
+	t_node	*temp;
+
+	if (!stk)
+		return ;
+	while (stk->head)
+	{
+		temp = stk->head;
+		stk->head = stk->head->next;
+		free(temp);
+	}
+	free(stk);
 }
