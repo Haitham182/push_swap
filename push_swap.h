@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmuqasqu <hmuqasqu@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: aborabi <aborabi@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/10 10:09:45 by hmuqasqu          #+#    #+#             */
-/*   Updated: 2026/10/11 14:49:37 by hmuqasqu         ###   ########.fr       */
+/*   Created: 2026/10/13 22:51:21 by aborabi           #+#    #+#             */
+/*   Updated: 2026/10/13 23:04:44 by aborabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,23 @@
 # define PUSH_SWAP_H
 
 # include <unistd.h>
+# include <stdbool.h>
 # include <stdlib.h>
 # include "libft.h"
+
+typedef enum e_strategy
+{
+	ADAPTIVE,
+	SIMPLE,
+	MEDIUM,
+	COMPLEX
+}	t_strategy;
+
+typedef struct s_config
+{
+	t_strategy	strategy;
+	bool		bench;
+}	t_config;
 
 typedef struct s_node
 {
