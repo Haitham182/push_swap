@@ -6,7 +6,7 @@
 /*   By: aborabi <aborabi@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 23:24:39 by aborabi           #+#    #+#             */
-/*   Updated: 2026/10/13 23:24:43 by aborabi          ###   ########.fr       */
+/*   Updated: 2026/10/14 01:23:57 by Haitham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static bool	parse_token(char *token, t_stack *stack_a)
 
 	error = 0;
 	num = ft_atoi_ps(token, &error);
-	if (error || has_duplicate(stack_a->head, (int)num))
+	if (error || has_duplicate(stack_a->head, (int)num))//we cast bec mybe the num is bigger than the biggest int
 		return (false);
 	add_node_back(stack_a, (int)num);
 	return (true);
@@ -52,7 +52,7 @@ static bool	process_arg(char *arg, t_stack *stack_a)
 	while (split[j])
 	{
 		if (!parse_token(split[j], stack_a))
-			return (free_split(split), false);
+			return (free_split(split), false);// if we do "15 aa 16" it will be handle and return false 
 		j++;
 	}
 	free_split(split);

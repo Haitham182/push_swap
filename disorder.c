@@ -6,7 +6,7 @@
 /*   By: aborabi <aborabi@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 23:21:45 by aborabi           #+#    #+#             */
-/*   Updated: 2026/10/13 23:21:51 by aborabi          ###   ########.fr       */
+/*   Updated: 2026/10/14 01:18:55 by Haitham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ double	compute_disorder(t_stack *stack)
 	int		inversions;
 	double	max_inversions;
 
-	size = stack_size(stack);
+	size = stack_size(stack);//******there is no function called stack_size
 	if (size <= 1)
 		return (0.0);
 	inversions = count_inversions(stack);
 	max_inversions = (double)(size * (size - 1)) / 2.0;
-	return ((double)inversions / max_inversions * 100.0);
+	return ((double)inversions / max_inversions * 100.0);//need more study
 }
