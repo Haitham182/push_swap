@@ -32,7 +32,7 @@ void	op_sa(t_stack *a)
 	if (!a || !a->head || !a->head->next)
 		return ;
 	swap(a);
-	write(1, "ra\n", 3);
+	write(1, "sa\n", 3);
 }
 
 void	op_sb(t_stack *b)
@@ -40,7 +40,7 @@ void	op_sb(t_stack *b)
 	if (!b || !b->head || !b->head->next)
 		return ;
 	swap(b);
-	write (1, "rb\n", 3);
+	write (1, "sb\n", 3);
 }
 
 void	op_pa(t_stack *a, t_stack *b)

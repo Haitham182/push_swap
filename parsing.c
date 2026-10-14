@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	is_flag(char *arg, t_config *config)
+int	is_flag(char *arg, t_config *config)// ****there isnt a function called ft_strcmp it is strncmp */
 {
 	if (ft_strcmp(arg, "--simple") == 0)
 		return (config->strategy = SIMPLE, 1);

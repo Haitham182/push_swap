@@ -28,7 +28,7 @@ void	op_rrb(t_stack *b)
 	write (1, "rrb\n", 4);
 }
 
-void	delete_stack(t_stack stk)
+void	delete_stack(t_stack *stk)
 {
 	t_node	*temp;
 
