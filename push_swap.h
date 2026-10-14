@@ -6,7 +6,7 @@
 /*   By: aborabi <aborabi@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 22:51:21 by aborabi           #+#    #+#             */
-/*   Updated: 2026/10/13 23:04:44 by aborabi          ###   ########.fr       */
+/*   Updated: 2026/10/14 17:16:10 by aborabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_node
 
 typedef struct s_stack
 {
+	int	size;
 	t_node	*head;
 	t_node	*last;
 }	t_stack;
