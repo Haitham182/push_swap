@@ -6,13 +6,13 @@
 /*   By: aborabi <aborabi@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 23:24:39 by aborabi           #+#    #+#             */
-/*   Updated: 2026/10/14 01:23:57 by Haitham          ###   ########.fr       */
+/*   Updated: 2026/10/14 20:18:57 by Haitham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_flag(char *arg, t_config *config)// ****there isnt a function called ft_strcmp it is strncmp */
+int	is_flag(char *arg, t_config *config)// ****there isnt a function called ft_strcmp it is strncmp 
 {
 	if (ft_strcmp(arg, "--simple") == 0)
 		return (config->strategy = SIMPLE, 1);

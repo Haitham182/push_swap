@@ -6,7 +6,7 @@
 /*   By: hmuqasqu <hmuqasqu@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 10:36:02 by hmuqasqu          #+#    #+#             */
-/*   Updated: 2026/10/13 17:50:39 by Haitham          ###   ########.fr       */
+/*   Updated: 2026/10/14 20:18:30 by Haitham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,31 @@ void	delete_stack(t_stack *stk)
 		free(temp);
 	}
 	free(stk);
+}
+
+size_t	stack_size(t_stack *stk)
+{
+	size_t	counter;
+	t_node	*temp;
+
+	counter = 0;
+	if (!stk)
+		return (0);
+	temp = stk->head;
+	while (temp)
+	{
+		counter++;
+		temp = temp->next;
+	}
+	return (counter);
+}
+
+int	ft_strcmp(const char *str1, const char *str2)
+{
+	size_t	i;
+
+	i = 0;
+	while (str1[i] == str2[i] && str1[i])
+		i++;
+	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }
