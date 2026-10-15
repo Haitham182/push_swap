@@ -38,3 +38,22 @@ int	ft_strcmp(const char *str1, const char *str2)
 		i++;
 	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }
+
+bool	add_node_back(t_stack *stack, int num)
+{
+	t_node *temp;
+
+	temp = lstnew_node(num);
+	if (!temp)
+		return (false);
+	if (!stack->head)
+	{
+		stack->head = temp;
+		stack->last = temp;
+		return (true);
+	}
+	stack->last->next = temp;
+	temp->prev = stack->last;
+	stack->last = temp;
+	return (true);
+}
