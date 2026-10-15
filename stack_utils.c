@@ -12,17 +12,29 @@
 
 #include "push_swap.h"
 
-int	stack_size(t_node *head)
+size_t	stack_size(t_stack *stk)
 {
-	int		size;
-	t_node	*current;
+	size_t	counter;
+	t_node	*temp;
 
-	size = 0;
-	current = head;
-	while (current)
+	counter = 0;
+	if (!stk)
+		return (0);
+	temp = stk->head;
+	while (temp)
 	{
-		size++;
-		current = current->next;
+		counter++;
+		temp = temp->next;
 	}
-	return (size);
+	return (counter);
+}
+
+int	ft_strcmp(const char *str1, const char *str2)
+{
+	size_t	i;
+
+	i = 0;
+	while (str1[i] == str2[i] && str1[i])
+		i++;
+	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }

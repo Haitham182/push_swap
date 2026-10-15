@@ -51,7 +51,7 @@ void	op_pa(t_stack *a, t_stack *b)
 	write (1, "pa\n", 3);
 }
 
-void	op_pb(t_stack *b, t_stack *a)
+void	op_pb(t_stack *a, t_stack *b)
 {
 	if (!a || !b || !a->head)
 		return ;
