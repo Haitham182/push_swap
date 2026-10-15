@@ -6,18 +6,20 @@
 /*   By: hmuqasqu <hmuqasqu@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 10:36:02 by hmuqasqu          #+#    #+#             */
-/*   Updated: 2026/10/14 20:18:30 by Haitham          ###   ########.fr       */
+/*   Updated: 2026/10/15 14:18:20 by hmuqasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	op_rra(t_stack *a)
+void	op_rra(t_stack *a,t_data *data)
 {
 	if (!a || !a->head || !a->head->next)
 		return ;
 	reverse_rot(a);
 	write (1, "rra\n", 4);
+	data->bench.rra++;
+	data->bench.total++;
 }
 
 void	op_rrb(t_stack *b)
@@ -26,6 +28,8 @@ void	op_rrb(t_stack *b)
 		return ;
 	reverse_rot(b);
 	write (1, "rrb\n", 4);
+	data->bench.rrb++;
+	data->bench.total++;
 }
 
 void	delete_stack(t_stack *stk)
@@ -42,4 +46,3 @@ void	delete_stack(t_stack *stk)
 	}
 	free(stk);
 }
-

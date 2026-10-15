@@ -12,18 +12,18 @@
 
 #include "push_swap.h"
 
-int	is_flag(char *arg, t_config *config)// ****there isnt a function called ft_strcmp it is strncmp 
+int	is_flag(char *arg, t_data *data)// ****there isnt a function called ft_strcmp it is strncmp 
 {
 	if (ft_strcmp(arg, "--simple") == 0)
-		return (config->strategy = SIMPLE, 1);
+		return (data->strategy = SIMPLE, 1);
 	if (ft_strcmp(arg, "--medium") == 0)
-		return (config->strategy = MEDIUM, 1);
+		return (data->strategy = MEDIUM, 1);
 	if (ft_strcmp(arg, "--complex") == 0)
-		return (config->strategy = COMPLEX, 1);
+		return (data->strategy = COMPLEX, 1);
 	if (ft_strcmp(arg, "--adaptive") == 0)
-		return (config->strategy = ADAPTIVE, 1);
+		return (data->strategy = ADAPTIVE, 1);
 	if (ft_strcmp(arg, "--bench") == 0)
-		return (config->bench = true, 1);
+		return (data->bench = true, 1);
 	return (0);
 }
 
@@ -60,14 +60,14 @@ static bool	process_arg(char *arg, t_stack *stack_a)
 	return (true);
 }
 
-bool	parse_args(int argc, char **argv, t_stack *stack_a, t_config *config)
+bool	parse_args(int argc, char **argv, t_stack *stack_a, t_data *data)
 {
 	int	i;
 
 	i = 1;
 	while (i < argc)
 	{
-		if (is_flag(argv[i], config))
+		if (is_flag(argv[i], data))
 		{
 			i++;
 			continue ;

@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 LIBFT = libft/libft.a
 
-SRCS = 
+SRCS = disorder.c op1.c op2.c parsing.c parsing_utils.c push.c revers_rot_and_op.c stack_utils.c 
 
 OBJS = $(SRCS:.c=.o)
 
