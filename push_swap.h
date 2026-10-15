@@ -41,7 +41,7 @@ typedef struct s_node
 
 typedef struct s_stack
 {
-	int	size;
+	int	size;//whyyyyyyyyy?????
 	t_node	*head;
 	t_node	*last;
 }	t_stack;

@@ -42,10 +42,10 @@ double	compute_disorder(t_stack *stack)
 	int		inversions;
 	double	max_inversions;
 
-	size = stack_size(stack);//******there is no function called stack_size
+	size = stack_size(stack);
 	if (size <= 1)
 		return (0.0);
 	inversions = count_inversions(stack);
-	max_inversions = (double)(size * (size - 1)) / 2.0;
-	return ((double)inversions / max_inversions * 100.0);//need more study
+	max_inversions = (double)(size * (size - 1)) / 2.0; //this is the most pairs we could have
+	return ((double)inversions / max_inversions * 100.0);//need more study  and why we do *100
 }
