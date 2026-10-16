@@ -84,7 +84,7 @@ void	push(t_stack *dest, t_stack *source);
 void	swap(t_stack *stk);
 void	rotate(t_stack *stk);
 void	reverse_rot(t_stack *stk);
-int		count_inversions(t_stack *stack);
+long long	count_inversions(t_stack *stack);
 double	compute_disorder(t_stack *stack);
 void	op_sa(t_stack *a, t_data *data);
 void	op_sb(t_stack *b, t_data *data);

@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-int	count_inversions(t_stack *stack)
+long long	count_inversions(t_stack *stack)
 {
-	int		inversions;
+	long long	inversions;
 	t_node	*i;
 	t_node	*j;
 
@@ -39,13 +39,13 @@ int	count_inversions(t_stack *stack)
 double	compute_disorder(t_stack *stack)
 {
 	int		size;
-	int		inversions;
-	double	max_inversions;
+	long long	inversions;
+	long long	max_inversions;
 
 	size = stack_size(stack);
 	if (size <= 1)
 		return (0.0);
 	inversions = count_inversions(stack);
-	max_inversions = (double)(size * (size - 1)) / 2.0; //this is the most pairs we could have
-	return ((double)inversions / max_inversions );//need more study  and why we do *100
+	max_inversions = (long long)size * (size - 1) / 2;
+	return ((double)inversions / max_inversions);
 }
