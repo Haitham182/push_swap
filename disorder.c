@@ -46,6 +46,6 @@ double	compute_disorder(t_stack *stack)
 	if (size <= 1)
 		return (0.0);
 	inversions = count_inversions(stack);
-	max_inversions = (long long)size * (size - 1) / 2;
-	return ((double)inversions / max_inversions);
+	max_inversions = (long long)size * (size - 1) / 2; // this counts the max pairs and we do long long to not overflow (size *size)
+	return ((double)inversions / max_inversions); //we cast to douple bec we do / 
 }
