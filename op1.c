@@ -12,28 +12,28 @@
 
 #include "push_swap.h"
 
-void	op_ra(t_stack *a,t_data *data)
+void	op_ra(t_stack *a, t_data *data)
 {
 	if (!a || !a->head || !a->head->next)
 		return ;
 	rotate(a);
 	write (1, "ra\n", 3);
-	data.bench.ra++;
-	data.bench.total++;
+	data->bench->ra++;
+	data->bench->total++;
 
 }
 
-void	op_rb(t_stack *b)
+void	op_rb(t_stack *b, t_data *data)
 {
 	if (!b || !b->head || !b->head->next)
 		return ;
 	rotate(b);
 	write (1, "rb\n", 3);
-	data->bench.rb++;
-	data->bench.total++;
+	data->bench->rb++;
+	data->bench->total++;
 }
 
-void	op_rr(t_stack *a, t_stack *b,t_data *data)
+void	op_rr(t_stack *a, t_stack *b, t_data *data)
 {
 	int	c;
 	c = 0;
@@ -50,12 +50,12 @@ void	op_rr(t_stack *a, t_stack *b,t_data *data)
 	if (c)
 	{
 		write (1, "rr\n", 3);
-		data->bench.rr++;
-		data->bench.total++;
+		data->bench->rr++;
+		data->bench->total++;
 	}
 }
 
-void	op_ss(t_stack *a, t_stack *b)
+void	op_ss(t_stack *a, t_stack *b, t_data *data)
 {
 	int	c;
 
@@ -73,12 +73,12 @@ void	op_ss(t_stack *a, t_stack *b)
 	if (c)
 	{
 		write (1, "ss\n", 3);
-		data->bench.ss++;
-		data->bench.total++;
+		data->bench->ss++;
+		data->bench->total++;
 	}
 }
 
-void	op_rrr(t_stack *a, t_stack *b)
+void	op_rrr(t_stack *a, t_stack *b, t_data *data)
 {
 	int	c;
 
@@ -96,7 +96,7 @@ void	op_rrr(t_stack *a, t_stack *b)
 	if (c)
 	{
 		write (1, "rrr\n", 4);
-		data->bench.rrr++;
-		data->bench.total++;
+		data->bench->rrr++;
+		data->bench->total++;
 	}
 }

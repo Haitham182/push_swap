@@ -59,16 +59,43 @@ typedef struct s_bench
 
 typedef struct s_data
 {
-	e_strategy strategy;
+	t_strategy strategy;
 	t_stack *a;
 	t_stack *b;
 	t_bench *bench;
 	double	disorder;
-	bool bench;
+	bool bench_enabled;
 	
 }	t_data;
 
 
-
+int		is_flag(char *arg, t_data *data);
+bool	parse_args(int argc, char **argv, t_stack *stack_a, t_data *data);
+void	free_split(char **split);
+bool	has_duplicate(t_node *node, int num);
+long	ft_atoi_ps(const char *str, int *error);
+size_t	stack_size(t_stack *stk);
+int		ft_strcmp(const char *str1, const char *str2);
+bool	add_node_back(t_stack *stack, int num);
+t_node	*lstnew_node(int number);
+t_stack	*lstnew_stack(void);
+void	delete_stack(t_stack *stk);
+void	push(t_stack *dest, t_stack *source);
+void	swap(t_stack *stk);
+void	rotate(t_stack *stk);
+void	reverse_rot(t_stack *stk);
+int		count_inversions(t_stack *stack);
+double	compute_disorder(t_stack *stack);
+void	op_sa(t_stack *a, t_data *data);
+void	op_sb(t_stack *b, t_data *data);
+void	op_ss(t_stack *a, t_stack *b, t_data *data);
+void	op_pa(t_stack *a, t_stack *b, t_data *data);
+void	op_pb(t_stack *a, t_stack *b, t_data *data);
+void	op_ra(t_stack *a, t_data *data);
+void	op_rb(t_stack *b, t_data *data);
+void	op_rr(t_stack *a, t_stack *b, t_data *data);
+void	op_rra(t_stack *a, t_data *data);
+void	op_rrb(t_stack *b, t_data *data);
+void	op_rrr(t_stack *a, t_stack *b, t_data *data);
 
 #endif

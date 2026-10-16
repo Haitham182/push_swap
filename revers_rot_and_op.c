@@ -27,42 +27,42 @@ void	reverse_rot(t_stack *stk)
 	stk->head = temp;
 }
 
-void	op_sa(t_stack *a)
+void	op_sa(t_stack *a, t_data *data)
 {
 	if (!a || !a->head || !a->head->next)
 		return ;
 	swap(a);
 	write(1, "sa\n", 3);
-	data->bench.sa++;
-	data->bench.total++;
+	data->bench->sa++;
+	data->bench->total++;
 }
 
-void	op_sb(t_stack *b)
+void	op_sb(t_stack *b, t_data *data)
 {
 	if (!b || !b->head || !b->head->next)
 		return ;
 	swap(b);
 	write (1, "sb\n", 3);
-	data->bench.sb++;
-	data->bench.total++;
+	data->bench->sb++;
+	data->bench->total++;
 }
 
-void	op_pa(t_stack *a, t_stack *b)
+void	op_pa(t_stack *a, t_stack *b, t_data *data)
 {
 	if (!a || !b || !b->head)
 		return ;
 	push(a, b);
 	write (1, "pa\n", 3);
-	data->bench.pa++;
-	data->bench.total++;
+	data->bench->pa++;
+	data->bench->total++;
 }
 
-void	op_pb(t_stack *a, t_stack *b)
+void	op_pb(t_stack *a, t_stack *b, t_data *data)
 {
 	if (!a || !b || !a->head)
 		return ;
 	push(b, a);
 	write (1, "pb\n", 3);
-	data->bench.pb++
-	data->bench.total++;
+	data->bench->pb++;
+	data->bench->total++;
 }

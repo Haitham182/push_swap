@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdbool.h>
 
 static int	d_count(int n)
 {

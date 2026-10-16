@@ -23,7 +23,7 @@ int	is_flag(char *arg, t_data *data)// ****there isnt a function called ft_strcm
 	if (ft_strcmp(arg, "--adaptive") == 0)
 		return (data->strategy = ADAPTIVE, 1);
 	if (ft_strcmp(arg, "--bench") == 0)
-		return (data->bench = true, 1);
+		return (data->bench_enabled = true, 1);
 	return (0);
 }
 
