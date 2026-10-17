@@ -35,7 +35,7 @@ typedef struct s_node
 
 typedef struct s_stack
 {
-	int		size;//whyyyyyyyyy?????
+	int		size;//whyyyyyyyyy????? to count the size of evrey stack after evrey push 
 	t_node	*head;
 	t_node	*last;
 }	t_stack;

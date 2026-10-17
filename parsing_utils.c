@@ -70,7 +70,7 @@ long	ft_atoi_ps(const char *str, int *error)
 			return (*error = 1, 0);
 		res = res * 10 + (str[i] - '0');
 		if ((sign == 1 && res > 2147483647)
-			|| (sign == -1 && res > 2147483648LL))//why ll to cast the number to long long // still why
+			|| (sign == -1 && res > 2147483648LL))//why ll to cast the number to long long // still why bec the compilers take it as int in defult
 			return (*error = 1, 0);
 		i++;
 	}

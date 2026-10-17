@@ -55,6 +55,9 @@ void	op_pa(t_stack *a, t_stack *b, t_data *data)
 	write (1, "pa\n", 3);
 	data->bench->pa++;
 	data->bench->total++;
+	//a should have the size  from the first
+	a->size++;
+	b->size--;
 }
 
 void	op_pb(t_stack *a, t_stack *b, t_data *data)
@@ -65,4 +68,6 @@ void	op_pb(t_stack *a, t_stack *b, t_data *data)
 	write (1, "pb\n", 3);
 	data->bench->pb++;
 	data->bench->total++;
+	b->size++;
+	a->size--;
 }
