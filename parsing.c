@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	is_flag(char *arg, t_data *data)// ****there isnt a function called ft_strcmp it is strncmp 
+int	is_flag(char *arg, t_data *data)
 {
 	if (ft_strcmp(arg, "--simple") == 0)
 		return (data->strategy = SIMPLE, 1);
@@ -22,7 +22,7 @@ int	is_flag(char *arg, t_data *data)// ****there isnt a function called ft_strcm
 		return (data->strategy = COMPLEX, 1);
 	if (ft_strcmp(arg, "--adaptive") == 0)
 		return (data->strategy = ADAPTIVE, 1);
-	if (ft_strcmp(arg, "--bench") == 0)
+	if (ft_strcmp(arg, "--bench") == 0) //          what this will dooooo????  important
 		return (data->bench_enabled = true, 1);
 	return (0);
 }

@@ -1,23 +1,31 @@
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+static void	free_data(t_data *data)
 {
-        t_data  *data;
-        if (argc <= 1)
-                return (1);
+	if (!data)
+		return ;
+	delete_stack(data->a);
+	delete_stack(data->b);
+	free(data->bench);
+	free(data);
+}
 
-        if (!parse_args(argc, argv,data->a,data))
-        {
-                write(1, "Error\n", 6);
-                exit(1);                             
-        }
-        
-        data = calloc(1,sizeof(t_data));
-        data->a = lstnew_stack();
-        data->b = lstnew_stack();
-        data->bench = malloc(sizeof(t_bench));
+int	main(int argc, char **argv)
+{
+	t_data	*data;
 
-
-
-
+	if (argc <= 1)
+		return (0);
+	data = calloc(1, sizeof(t_data));
+	if (!data)
+		return (1);
+	data->a = lstnew_stack();
+	data->b = lstnew_stack();
+	data->bench = calloc(1, sizeof(t_bench));
+	if (!data->a || !data->b || !data->bench)
+	{
+		free_data(data);
+		return (1);
+	}
+	
 }

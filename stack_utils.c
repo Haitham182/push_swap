@@ -46,14 +46,17 @@ bool	add_node_back(t_stack *stack, int num)
 	temp = lstnew_node(num);
 	if (!temp)
 		return (false);
-	if (!stack->head)
+	if (!stack->head) //اول حاله لما ما يكون في نودز اصلا 
 	{
 		stack->head = temp;
 		stack->last = temp;
-		return (true);
 	}
-	stack->last->next = temp;
-	temp->prev = stack->last;
-	stack->last = temp;
+	else // اذا كان في نود
+	{
+		stack->last->next = temp;
+		temp->prev = stack->last;
+		stack->last = temp;
+	}
+	stack->size++;
 	return (true);
 }

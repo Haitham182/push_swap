@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 LIBFT = libft/libft.a
 
-SRCS = disorder.c op1.c op2.c parsing.c parsing_utils.c push.c revers_rot_and_op.c stack_utils.c 
+SRCS = main.c disorder.c op1.c op2.c parsing.c parsing_utils.c push.c revers_rot_and_op.c stack_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -15,7 +15,7 @@ $(LIBFT) :
 	@make -C libft
 
 $(NAME) : $(LIBFT) $(OBJS)
-	$(CC) $(CFLAGS) $(LIBFT) $(OBJS) -o $@
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $@
 
 %.o: %.c
 	@echo "[CC] $<"
