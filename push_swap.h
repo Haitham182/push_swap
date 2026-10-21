@@ -62,7 +62,7 @@ typedef struct s_data
 	t_strategy strategy;
 	t_stack *a;
 	t_stack *b;
-	t_bench bench;
+	t_bench *bench;
 	double	disorder;
 	bool bench_enabled;
 	
@@ -97,11 +97,8 @@ void	op_rr(t_stack *a, t_stack *b, t_data *data);
 void	op_rra(t_stack *a, t_data *data);
 void	op_rrb(t_stack *b, t_data *data);
 void	op_rrr(t_stack *a, t_stack *b, t_data *data);
-<<<<<<< HEAD
-=======
 bool	is_sorted(t_stack *stack);
 void	sort_three(t_stack *a, t_data *data);
 void	sort_five(t_stack *a, t_stack *b, t_data *data);
->>>>>>> 510ec69 (adding new files)
 
 #endif

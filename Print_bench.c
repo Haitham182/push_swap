@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-#include "push_swap.h"
-=======
 #include "push_swap.h"
 
 static void	print_disorder(double disorder)
@@ -25,11 +22,11 @@ static void	print_strategy(t_strategy strategy)
 {
 	ft_putstr_fd("[bench] strategy: ", 2);
 	if (strategy == ADAPTIVE)
-		ft_putstr_fd("Adaptive / O(n√n)\n", 2);
-	else if (strategy == CHUNK)
-		ft_putstr_fd("Chunk / O(n√n)\n", 2);
-	else if (strategy == RADIX)
-		ft_putstr_fd("Radix / O(n log n)\n", 2);
+		ft_putstr_fd("Adaptive / O(n√n)\n", 2); // **** ARE you sure with adaptive you will print o(n)√n *******
+	else if (strategy == Medium)// changed chunk to medium
+		ft_putstr_fd("Medium / O(n√n)\n", 2);
+	else if (strategy == COMPLEX) //changed radix to complex
+		ft_putstr_fd("Complex / O(n log n)\n", 2);
 	else
 		ft_putstr_fd("Simple / O(n^2)\n", 2);
 }
@@ -71,4 +68,3 @@ void	print_bench_summary(t_data *data)
 	print_strategy(data->strategy);
 	print_bench_ops(data->bench);
 }
->>>>>>> 510ec69 (adding new files)

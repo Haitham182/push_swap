@@ -22,14 +22,14 @@ static int	find_min_index(t_stack *stack)
 	if (!stack || !stack->head)
 		return (-1);
 	curr = stack->head;
-	min_val = curr->value;
+	min_val = curr->number;
 	min_idx = 0;
 	i = 0;
 	while (curr)
 	{
-		if (curr->value < min_val)
+		if (curr->number < min_val)
 		{
-			min_val = curr->value;
+			min_val = curr->number;
 			min_idx = i;
 		}
 		curr = curr->next;
@@ -47,7 +47,7 @@ static void	bring_to_top_a(t_data *data, int target_idx)
 	{
 		while (target_idx > 0)
 		{
-			op_ra(data);
+			op_ra(data->a, data);
 			target_idx--;
 		}
 	}
@@ -55,7 +55,7 @@ static void	bring_to_top_a(t_data *data, int target_idx)
 	{
 		while (target_idx < size)
 		{
-			op_rra(data);
+			op_rra(data->a, data);
 			target_idx++;
 		}
 	}
@@ -68,10 +68,12 @@ void	sort_simple(t_data *data)
 	while (data->a->size > 3)
 	{
 		min_pos = find_min_index(data->a);
+		if (min_pos < 0) //لانه الfind_min_index   ممكن ترجع -1
+			return ;
 		bring_to_top_a(data, min_pos);
-		op_pb(data);
+		op_pb(data->a, data->b, data);
 	}
 	sort_three(data->a, data);
 	while (data->b->size > 0)
-		op_pa(data);
+		op_pa(data->a, data->b, data);
 }

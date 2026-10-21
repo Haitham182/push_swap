@@ -6,7 +6,7 @@ void	select_strategy(t_data *data)
     {
         if(data->a->size <= 100)
         {
-            if(data->disorder < 20.0)
+            if(data->disorder < 20.0) // disorder between 0 and 1 **
                 data->strategy = SIMPLE;
             else
                 data->strategy = MEDIUM;
