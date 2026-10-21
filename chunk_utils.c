@@ -22,14 +22,14 @@ int	find_max_index(t_stack *stack)
 	if (!stack || !stack->head)
 		return (-1);
 	curr = stack->head;
-	max_val = curr->value;
+	max_val = curr->number;
 	max_idx = 0;
 	i = 0;
 	while (curr)
 	{
-		if (curr->value > max_val)
+		if (curr->number > max_val)
 		{
-			max_val = curr->value;
+			max_val = curr->number;
 			max_idx = i;
 		}
 		curr = curr->next;
@@ -49,7 +49,7 @@ void	bring_to_top_b(t_data *data, int target_idx)
 	{
 		while (target_idx > 0)
 		{
-			op_rb(data);
+			op_rb(data->b, data);
 			target_idx--;
 		}
 	}
@@ -57,13 +57,13 @@ void	bring_to_top_b(t_data *data, int target_idx)
 	{
 		while (target_idx < size)
 		{
-			op_rrb(data);
+			op_rrb(data->b, data);
 			target_idx++;
 		}
 	}
 }
 
-static int	get_chunk_size(int size)
+int	get_chunk_size(int size)
 {
 	if (size <= 20)
 		return (4);

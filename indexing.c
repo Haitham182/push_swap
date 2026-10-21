@@ -12,26 +12,28 @@
 
 #include "push_swap.h"
 
-void	assign_indices(t_stack *a)
+static int	count_smaller(t_stack *stack, int number)
 {
 	t_node	*curr;
-	t_node	*compare;
-	int		index;
+	int		count;
 
-	if (!a || !a->head)
-		return ;
-	curr = a->head;
+	count = 0;
+	if (!stack)
+		return (0);
+	curr = stack->head;
 	while (curr)
 	{
-		index = 0;
-		compare = a->head;
-		while (compare)
-		{
-			if (compare->value < curr->value)
-				index++;
-			compare = compare->next;
-		}
-		curr->index = index;
+		if (curr->number < number)
+			count++;
 		curr = curr->next;
 	}
+	return (count);
+}
+
+int	get_index(t_data *data, int number)
+{
+	if (!data)
+		return (0);
+	return (count_smaller(data->a, number)
+		+ count_smaller(data->b, number));
 }

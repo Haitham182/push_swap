@@ -58,20 +58,25 @@ long	ft_atoi_ps(const char *str, int *error)
 	int			i;
 	int			sign;
 	long long	res;
+	long long	limit;
+	int			digit;
 
 	i = 0;
 	sign = 1;
 	res = 0;
 	if (!skip_whitespaces_and_sign(str, &i, &sign))
 		return (*error = 1, 0);
+	limit = 2147483647LL;
+	if (sign == -1)
+		limit = 2147483648LL;
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
 			return (*error = 1, 0);
-		res = res * 10 + (str[i] - '0');
-		if ((sign == 1 && res > 2147483647)
-			|| (sign == -1 && res > 2147483648LL))//why ll to cast the number to long long // still why bec the compilers take it as int in defult
+		digit = str[i] - '0';
+		if (res > (limit - digit) / 10)
 			return (*error = 1, 0);
+		res = res * 10 + digit;
 		i++;
 	}
 	return (res * sign);

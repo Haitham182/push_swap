@@ -15,23 +15,25 @@
 static void	push_chunks_to_b(t_data *data, int chunk_size)
 {
 	int	i;
+	int	index;
 
 	i = 0;
 	while (data->a->size > 0)
 	{
-		if (data->a->head->index <= i)
+		index = get_index(data, data->a->head->number);
+		if (index <= i)
 		{
-			op_pb(data);
-			op_rb(data);
+			op_pb(data->a, data->b, data);
+			op_rb(data->b, data);
 			i++;
 		}
-		else if (data->a->head->index <= i + chunk_size)
+		else if (index <= i + chunk_size)
 		{
-			op_pb(data);
+			op_pb(data->a, data->b, data);
 			i++;
 		}
 		else
-			op_ra(data);
+			op_ra(data->a, data);
 	}
 }
 
@@ -43,7 +45,7 @@ static void	push_back_to_a(t_data *data)
 	{
 		max_idx = find_max_index(data->b);
 		bring_to_top_b(data, max_idx);
-		op_pa(data);
+		op_pa(data->a, data->b, data);
 	}
 }
 
@@ -53,7 +55,6 @@ void	sort_chunk(t_data *data)
 
 	if (!data || !data->a)
 		return ;
-	assign_indices(data->a);
 	chunk_size = get_chunk_size(data->a->size);
 	push_chunks_to_b(data, chunk_size);
 	push_back_to_a(data);

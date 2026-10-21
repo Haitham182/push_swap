@@ -29,6 +29,11 @@ static void	run_sort(t_data *data)
 		return ;
 	if (data->bench_enabled || data->strategy == ADAPTIVE)
 		data->disorder = compute_disorder(data->a);
+	if (data->strategy != ADAPTIVE)
+	{
+		execute_strategy(data);
+		return ;
+	}
 	if (data->a->size == 2)
 		op_sa(data->a, data);
 	else if (data->a->size <= 3)

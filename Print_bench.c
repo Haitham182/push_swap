@@ -5,8 +5,8 @@ static void	print_disorder(double disorder)
 	int	int_part;
 	int	dec_part;
 
-	int_part = (int)disorder;
-	dec_part = (int)((disorder - int_part) * 100);
+	int_part = (int)(disorder * 100.0);
+	dec_part = (int)((disorder * 10000.0) - (int_part * 100));
 	if (dec_part < 0)
 		dec_part = -dec_part;
 	ft_putstr_fd("[bench] disorder: ", 2);
@@ -23,7 +23,7 @@ static void	print_strategy(t_strategy strategy)
 	ft_putstr_fd("[bench] strategy: ", 2);
 	if (strategy == ADAPTIVE)
 		ft_putstr_fd("Adaptive / O(n√n)\n", 2); // **** ARE you sure with adaptive you will print o(n)√n *******
-	else if (strategy == Medium)// changed chunk to medium
+	else if (strategy == MEDIUM)
 		ft_putstr_fd("Medium / O(n√n)\n", 2);
 	else if (strategy == COMPLEX) //changed radix to complex
 		ft_putstr_fd("Complex / O(n log n)\n", 2);
@@ -66,5 +66,5 @@ void	print_bench_summary(t_data *data)
 		return ;
 	print_disorder(data->disorder);
 	print_strategy(data->strategy);
-	print_bench_ops(data->bench);
+	print_bench_ops(*data->bench);
 }
