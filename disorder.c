@@ -12,7 +12,11 @@
 
 #include "push_swap.h"
 
+<<<<<<< HEAD
 long long	count_inversions(t_stack *stack)
+=======
+static long long	count_inversions(t_stack *stack)
+>>>>>>> 510ec69 (adding new files)
 {
 	long long	inversions;
 	t_node	*i;
@@ -46,6 +50,11 @@ double	compute_disorder(t_stack *stack)
 	if (size <= 1)
 		return (0.0);
 	inversions = count_inversions(stack);
+<<<<<<< HEAD
 	max_inversions = (long long)size * (size - 1) / 2; // this counts the max pairs and we do long long to not overflow (size *size)
 	return ((double)inversions / max_inversions); //we cast to douple bec we do / 
+=======
+	max_inversions = (long long)size * (size - 1) / 2;
+	return ((double)inversions / (double)max_inversions);  
+>>>>>>> 510ec69 (adding new files)
 }

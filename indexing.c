@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   indexing.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aborabi <aborabi@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/30 17:15:57 by aborabi           #+#    #+#             */
-/*   Updated: 2026/09/30 17:29:48 by aborabi          ###   ########.fr       */
+/*   Created: 2026/10/21 03:16:04 by aborabi           #+#    #+#             */
+/*   Updated: 2026/10/21 03:16:31 by aborabi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "push_swap.h"
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
+void	assign_indices(t_stack *a)
+{
+	t_node	*curr;
+	t_node	*compare;
+	int		index;
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar_pf(char c);
-int	ft_putstr_pf(char *s);
-int	ft_putnbr_pf(int n);
-int	ft_putuint_pf(unsigned int n);
-int	ft_puthex_pf(unsigned int num, char specifier);
-int	ft_putptr_pf(unsigned long long ptr);
-
-#endif
+	if (!a || !a->head)
+		return ;
+	curr = a->head;
+	while (curr)
+	{
+		index = 0;
+		compare = a->head;
+		while (compare)
+		{
+			if (compare->value < curr->value)
+				index++;
+			compare = compare->next;
+		}
+		curr->index = index;
+		curr = curr->next;
+	}
+}

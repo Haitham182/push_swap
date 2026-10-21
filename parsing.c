@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+	/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
@@ -22,7 +22,11 @@ int	is_flag(char *arg, t_data *data)
 		return (data->strategy = COMPLEX, 1);
 	if (ft_strcmp(arg, "--adaptive") == 0)
 		return (data->strategy = ADAPTIVE, 1);
+<<<<<<< HEAD
 	if (ft_strcmp(arg, "--bench") == 0) //          what this will dooooo????  important
+=======
+	if (ft_strcmp(arg, "--bench") == 0)
+>>>>>>> 510ec69 (adding new files)
 		return (data->bench_enabled = true, 1);
 	return (0);
 }
