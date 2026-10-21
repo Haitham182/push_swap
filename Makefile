@@ -12,10 +12,10 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)	
 
 $(LIBFT) :
-	@make -C libft
+	@make --no-print-directory -C libft
 
 $(NAME) : $(LIBFT) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $@
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $@
 
 %.o: %.c
 	@echo "[CC] $<"
@@ -23,11 +23,11 @@ $(NAME) : $(LIBFT) $(OBJS)
 
 clean:
 	@rm -f $(OBJS)
-	@make -C libft clean
+	@make --no-print-directory -C libft clean
 
 fclean: clean
 	@rm -f $(NAME)
-	@make -C libft fclean
+	@make --no-print-directory -C libft fclean
 
 re: fclean all
 

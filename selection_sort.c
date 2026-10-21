@@ -65,6 +65,11 @@ void	sort_simple(t_data *data)
 {
 	int	min_pos;
 
+	if (data->a->size == 2)
+	{
+		op_sa(data->a, data);
+		return ;
+	}
 	while (data->a->size > 3)
 	{
 		min_pos = find_min_index(data->a);
