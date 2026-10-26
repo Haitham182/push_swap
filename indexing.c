@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static int	count_smaller(t_stack *stack, int number)
+static int	count_smaller(t_stack *stack, int number) // بدور على عدد الارقام اللي اصغر من رقم معين يعني برجع كم رقم اصغر منه	
 {
 	t_node	*curr;
 	int		count;
@@ -30,7 +30,7 @@ static int	count_smaller(t_stack *stack, int number)
 	return (count);
 }
 
-int	get_index(t_data *data, int number)
+int	get_index(t_data *data, int number) //   معًا. لأن الأرقام تنتقل بين الستاكين، وعد الاثنين يحافظ على رتبة الرقم نفسها بعد نقله a وb  بتعد الأرقام الأصغر من الرقم في الستاكين 
 {
 	if (!data)
 		return (0);

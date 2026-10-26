@@ -12,27 +12,27 @@
 
 #include "push_swap.h"
 
-static void	push_chunks_to_b(t_data *data, int chunk_size)
+static void	push_chunks_to_b(t_data *data, int chunk_size) // بوخد الداتا وعدد الشنكات
 {
 	int	i;
 	int	index;
 
-	i = 0;
+	i = 0; // i: اللي هو كم رقم نقلنا لستاك ب
 	while (data->a->size > 0)
 	{
-		index = get_index(data, data->a->head->number);
-		if (index <= i)
+		index = get_index(data, data->a->head->number); // بخزن كم رقم اصغر من الرقم هاض
+		if (index <= i) //B وبندور B الى A يعني الرقم ترتيبه ضمن الأرقام اللي وصل دورها بالفعل. وقتها بتنقله من
 		{
 			op_pb(data->a, data->b, data);
 			op_rb(data->b, data);
 			i++;
 		}
-		else if (index <= i + chunk_size)
+		else if (index <= i + chunk_size) // بدون ما تدور بi لكنه لسا داخل حدود الشنك الحالي يعني بتنقله من أ الى ب وبتزيد الi يعني الرقم اكبر من
 		{
 			op_pb(data->a, data->b, data);
 			i++;
 		}
-		else
+		else //**** اذا كان خارج حدود الشنك هون انا بدور* أ *عشان افحص اللي بعده*****
 			op_ra(data->a, data);
 	}
 }

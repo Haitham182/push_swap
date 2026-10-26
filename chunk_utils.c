@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	find_max_index(t_stack *stack)
+int	find_max_index(t_stack *stack) // برجع مكان اكبر عنصر بالاراي
 {
 	t_node	*curr;
 	int		max_val;
@@ -38,7 +38,7 @@ int	find_max_index(t_stack *stack)
 	return (max_idx);
 }
 
-void	bring_to_top_b(t_data *data, int target_idx)
+void	bring_to_top_b(t_data *data, int target_idx) //بطلع العنصر المطلوب لاول الستاك
 {
 	int	size;
 
@@ -63,7 +63,7 @@ void	bring_to_top_b(t_data *data, int target_idx)
 	}
 }
 
-int	get_chunk_size(int size)
+int	get_chunk_size(int size) // *****  هون مش المفروض يكون جذر الحجم؟؟؟؟؟؟ كيف حاط ارقام ثابته؟  ***********
 {
 	if (size <= 20)
 		return (4);
