@@ -17,7 +17,7 @@ void	execute_strategy(t_data *data)
 {
     select_strategy(data);
     if(data->strategy == SIMPLE)
-        sort_medium(data);
+        sort_simple(data);
     else if (data->strategy == MEDIUM)
         sort_medium(data);
    /* else if (data->strategy == COMPLEX)
