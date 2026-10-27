@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdbool.h>
 # include <stdlib.h>
-# include "libft.h"
 
 typedef enum e_strategy
 {
@@ -71,7 +70,7 @@ typedef struct s_data
 
 int		is_flag(char *arg, t_data *data);
 bool	parse_args(int argc, char **argv, t_stack *stack_a, t_data *data);
-void	free_split(char **split);
+void	free_split(char **p);
 bool	has_duplicate(t_node *node, int num);
 long	ft_atoi_ps(const char *str, int *error);
 size_t	stack_size(t_stack *stk);
@@ -111,5 +110,12 @@ void	op_rrr(t_stack *a, t_stack *b, t_data *data);
 bool	is_sorted(t_stack *stack);
 void	sort_three(t_stack *a, t_data *data);
 void	sort_five(t_stack *a, t_stack *b, t_data *data);
+void	ft_bzero(void *p, size_t size);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	*ft_calloc(size_t num, size_t size);
+char	**ft_split(char const *s, char c);
+size_t	ft_strlen(const char *arr);
+
 
 #endif

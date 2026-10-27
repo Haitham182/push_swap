@@ -1,21 +1,33 @@
 NAME = push_swap
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Ilibft
+CFLAGS = -Wall -Wextra -Werror
 
-LIBFT = libft/libft.a
-
-SRCS = main.c disorder.c op1.c op2.c parsing.c parsing_utils.c push.c revers_rot_and_op.c stack_utils.c sort_small.c selection_sort.c chunk_sort.c chunk_utils.c indexing.c strategy.c Print_bench.c
+SRCS = main.c \
+       ./strategy_disorder/disorder.c \
+       ./strategy_disorder/strategy.c \
+       ./strategy_disorder/Print_bench.c \
+       ./operations/op1.c \
+       ./operations/op2.c \
+       ./operations/op3.c \
+       ./operations/stack_utils2.c \
+       ./operations/stack_utils.c \
+       ./parsing/parsing.c \
+       ./parsing/parsing_utils.c \
+       ./parsing/parsing_utils2.c \
+       ./parsing/ft_split.c \
+       ./algo_sorts/selection_sort.c \
+       ./algo_sorts/chunk_sort.c \
+       ./algo_sorts/chunk_utils.c \
+       ./algo_sorts/indexing.c \
+       ./algo_sorts/sort_small.c
 
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)	
 
-$(LIBFT) :
-	@make --no-print-directory -C libft
-
-$(NAME) : $(LIBFT) $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $@
+$(NAME) : $(OBJS)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.c
 	@echo "[CC] $<"
@@ -23,11 +35,9 @@ $(NAME) : $(LIBFT) $(OBJS)
 
 clean:
 	@rm -f $(OBJS)
-	@make --no-print-directory -C libft clean
 
 fclean: clean
 	@rm -f $(NAME)
-	@make --no-print-directory -C libft fclean
 
 re: fclean all
 
