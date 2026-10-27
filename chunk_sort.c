@@ -49,7 +49,7 @@ static void	push_back_to_a(t_data *data)
 	}
 }
 
-void	sort_chunk(t_data *data)
+void	sort_medium(t_data *data)
 {
 	int	chunk_size;
 
