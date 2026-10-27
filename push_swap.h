@@ -28,13 +28,14 @@ typedef enum e_strategy
 typedef struct s_node
 {
 	int				number;
+	int 			index;
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
 
 typedef struct s_stack
 {
-	int		size;//whyyyyyyyyy????? ***to count the size of evrey stack after evrey push 
+	int		size;
 	t_node	*head;
 	t_node	*last;
 }	t_stack;
@@ -96,26 +97,28 @@ int		find_max_index(t_stack *stack);
 void	bring_to_top_b(t_data *data, int target_idx);
 int		get_chunk_size(int size);
 void	print_bench_summary(t_data *data);
-void	op_sa(t_stack *a, t_data *data);
-void	op_sb(t_stack *b, t_data *data);
-void	op_ss(t_stack *a, t_stack *b, t_data *data);
-void	op_pa(t_stack *a, t_stack *b, t_data *data);
-void	op_pb(t_stack *a, t_stack *b, t_data *data);
-void	op_ra(t_stack *a, t_data *data);
-void	op_rb(t_stack *b, t_data *data);
-void	op_rr(t_stack *a, t_stack *b, t_data *data);
-void	op_rra(t_stack *a, t_data *data);
-void	op_rrb(t_stack *b, t_data *data);
-void	op_rrr(t_stack *a, t_stack *b, t_data *data);
+void	op_sa(t_data *data);
+void	op_sb(t_data *data);
+void	op_ss(t_data *data);
+void	op_pa(t_data *data);
+void	op_pb(t_data *data);
+void	op_ra(t_data *data);
+void	op_rb(t_data *data);
+void	op_rr(t_data *data);
+void	op_rra(t_data *data);
+void	op_rrb(t_data *data);
+void	op_rrr(t_data *data);
 bool	is_sorted(t_stack *stack);
-void	sort_three(t_stack *a, t_data *data);
-void	sort_five(t_stack *a, t_stack *b, t_data *data);
+void	sort_three(t_data *data);
+void	sort_five(t_data *data);
 void	ft_bzero(void *p, size_t size);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	*ft_calloc(size_t num, size_t size);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *arr);
+void	sort_complex(t_data *data);
+
 
 
 #endif

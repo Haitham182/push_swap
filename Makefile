@@ -20,7 +20,8 @@ SRCS = main.c \
        ./algo_sorts/chunk_sort.c \
        ./algo_sorts/chunk_utils.c \
        ./algo_sorts/indexing.c \
-       ./algo_sorts/sort_small.c
+       ./algo_sorts/sort_small.c \
+       ./algo_sorts/sort_complex.c
 
 OBJS = $(SRCS:.c=.o)
 

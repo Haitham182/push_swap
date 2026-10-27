@@ -47,7 +47,7 @@ static void	bring_to_top_a(t_data *data, int target_idx)
 	{
 		while (target_idx > 0)
 		{
-			op_ra(data->a, data);
+			op_ra(data);
 			target_idx--;
 		}
 	}
@@ -55,7 +55,7 @@ static void	bring_to_top_a(t_data *data, int target_idx)
 	{
 		while (target_idx < size)
 		{
-			op_rra(data->a, data);
+			op_rra(data);
 			target_idx++;
 		}
 	}
@@ -67,7 +67,7 @@ void	sort_simple(t_data *data)
 
 	if (data->a->size == 2)
 	{
-		op_sa(data->a, data);
+		op_sa(data);
 		return ;
 	}
 	while (data->a->size > 3)
@@ -76,9 +76,9 @@ void	sort_simple(t_data *data)
 		if (min_pos < 0) //لانه الfind_min_index   ممكن ترجع -1
 			return ;
 		bring_to_top_a(data, min_pos);
-		op_pb(data->a, data->b, data);
+		op_pb(data);
 	}
-	sort_three(data->a, data);
+	sort_three(data);
 	while (data->b->size > 0)
-		op_pa(data->a, data->b, data);
+		op_pa(data);
 }

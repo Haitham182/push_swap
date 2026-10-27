@@ -23,17 +23,17 @@ static void	push_chunks_to_b(t_data *data, int chunk_size) // بوخد الدا�
 		index = get_index(data, data->a->head->number); // بخزن كم رقم اصغر من الرقم هاض
 		if (index <= i) //B وبندور B الى A يعني الرقم ترتيبه ضمن الأرقام اللي وصل دورها بالفعل. وقتها بتنقله من
 		{
-			op_pb(data->a, data->b, data);
-			op_rb(data->b, data);
+			op_pb(data);
+			op_rb(data);
 			i++;
 		}
 		else if (index <= i + chunk_size) // بدون ما تدور بi لكنه لسا داخل حدود الشنك الحالي يعني بتنقله من أ الى ب وبتزيد الi يعني الرقم اكبر من
 		{
-			op_pb(data->a, data->b, data);
+			op_pb(data);
 			i++;
 		}
 		else //**** اذا كان خارج حدود الشنك هون انا بدور* أ *عشان افحص اللي بعده*****
-			op_ra(data->a, data);
+			op_ra(data);
 	}
 }
 
@@ -45,7 +45,7 @@ static void	push_back_to_a(t_data *data)
 	{
 		max_idx = find_max_index(data->b);
 		bring_to_top_b(data, max_idx);
-		op_pa(data->a, data->b, data);
+		op_pa(data);
 	}
 }
 

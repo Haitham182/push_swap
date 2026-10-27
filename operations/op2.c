@@ -12,21 +12,21 @@
 
 #include "../push_swap.h"
 
-void	op_rra(t_stack *a, t_data *data)
+void	op_rra(t_data *data)
 {
-	if (!a || !a->head || !a->head->next)
+	if (!data->a || !data->a->head || !data->a->head->next)
 		return ;
-	reverse_rot(a);
+	reverse_rot(data->a);
 	write (1, "rra\n", 4);
 	data->bench->rra++;
 	data->bench->total++;
 }
 
-void	op_rrb(t_stack *b, t_data *data)
+void	op_rrb(t_data *data)
 {
-	if (!b || !b->head || !b->head->next)
+	if (!data->b || !data->b->head || !data->b->head->next)
 		return ;
-	reverse_rot(b);
+	reverse_rot(data->b);
 	write (1, "rrb\n", 4);
 	data->bench->rrb++;
 	data->bench->total++;

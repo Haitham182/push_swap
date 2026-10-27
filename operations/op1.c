@@ -12,40 +12,40 @@
 
 #include "../push_swap.h"
 
-void	op_ra(t_stack *a, t_data *data)
+void	op_ra(t_data *data)
 {
-	if (!a || !a->head || !a->head->next)
+	if (!data->a || !data->a->head || !data->a->head->next)
 		return ;
-	rotate(a);
+	rotate(data->a);
 	write (1, "ra\n", 3);
 	data->bench->ra++;
 	data->bench->total++;
 
 }
 
-void	op_rb(t_stack *b, t_data *data)
+void	op_rb(t_data *data)
 {
-	if (!b || !b->head || !b->head->next)
+	if (!data->b || !data->b->head || !data->b->head->next)
 		return ;
-	rotate(b);
+	rotate(data->b);
 	write (1, "rb\n", 3);
 	data->bench->rb++;
 	data->bench->total++;
 }
 
-void	op_rr(t_stack *a, t_stack *b, t_data *data)
+void	op_rr(t_data *data)
 {
 	int	c;
 	c = 0;
-	if (a && a->head && a->head->next)
+	if (data->a && data->a->head && data->a->head->next)
 	{
 		c = 1;
-		rotate(a);
+		rotate(data->a);
 	}
-	if (b && b->head && b->head->next)
+	if (data->b && data->b->head && data->b->head->next)
 	{
 		c = 1;
-		rotate(b);
+		rotate(data->b);
 	}
 	if (c)
 	{
@@ -55,20 +55,20 @@ void	op_rr(t_stack *a, t_stack *b, t_data *data)
 	}
 }
 
-void	op_ss(t_stack *a, t_stack *b, t_data *data)
+void	op_ss(t_data *data)
 {
 	int	c;
 
 	c = 0;
-	if (a && a->head && a->head->next)
+	if (data->a && data->a->head && data->a->head->next)
 	{
 		c = 1;
-		swap(a);
+		swap(data->a);
 	}
-	if (b && b->head && b->head->next)
+	if (data->b && data->b->head && data->b->head->next)
 	{
 		c = 1;
-		swap(b);
+		swap(data->b);
 	}
 	if (c)
 	{
@@ -78,20 +78,20 @@ void	op_ss(t_stack *a, t_stack *b, t_data *data)
 	}
 }
 
-void	op_rrr(t_stack *a, t_stack *b, t_data *data)
+void	op_rrr(t_data *data)
 {
 	int	c;
 
 	c = 0;
-	if (a && a->head && a->head->next)
+	if (data->a && data->a->head && data->a->head->next)
 	{
 		c = 1;
-		reverse_rot(a);
+		reverse_rot(data->a);
 	}
-	if (b && b->head && b->head->next)
+	if (data->b && data->b->head && data->b->head->next)
 	{
 		c = 1;
-		reverse_rot(b);
+		reverse_rot(data->b);
 	}
 	if (c)
 	{

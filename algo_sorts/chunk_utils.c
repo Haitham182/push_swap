@@ -49,7 +49,7 @@ void	bring_to_top_b(t_data *data, int target_idx) //بطلع العنصر الم
 	{
 		while (target_idx > 0)
 		{
-			op_rb(data->b, data);
+			op_rb(data);
 			target_idx--;
 		}
 	}
@@ -57,7 +57,7 @@ void	bring_to_top_b(t_data *data, int target_idx) //بطلع العنصر الم
 	{
 		while (target_idx < size)
 		{
-			op_rrb(data->b, data);
+			op_rrb(data);
 			target_idx++;
 		}
 	}

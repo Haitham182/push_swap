@@ -27,47 +27,47 @@ void	reverse_rot(t_stack *stk)
 	stk->head = temp;
 }
 
-void	op_sa(t_stack *a, t_data *data)
+void	op_sa(t_data *data)
 {
-	if (!a || !a->head || !a->head->next)
+	if (!data->a || !data->a->head || !data->a->head->next)
 		return ;
-	swap(a);
+	swap(data->a);
 	write(1, "sa\n", 3);
 	data->bench->sa++;
 	data->bench->total++;
 }
 
-void	op_sb(t_stack *b, t_data *data)
+void	op_sb(t_data *data)
 {
-	if (!b || !b->head || !b->head->next)
+	if (!data->b || !data->b->head || !data->b->head->next)
 		return ;
-	swap(b);
+	swap(data->b);
 	write (1, "sb\n", 3);
 	data->bench->sb++;
 	data->bench->total++;
 }
 
-void	op_pa(t_stack *a, t_stack *b, t_data *data)
+void	op_pa(t_data *data)
 {
-	if (!a || !b || !b->head)
+	if (!data->a || !data->b || !data->b->head)
 		return ;
-	push(a, b);
+	push(data->a, data->b);
 	write (1, "pa\n", 3);
 	data->bench->pa++;
 	data->bench->total++;
 	//a should have the size  from the first
-	a->size++;
-	b->size--;
+	data->a->size++;
+	data->b->size--;
 }
 
-void	op_pb(t_stack *a, t_stack *b, t_data *data)
+void	op_pb(t_data *data)
 {
-	if (!a || !b || !a->head)
+	if (!data->a || !data->b || !data->a->head)
 		return ;
-	push(b, a);
+	push(data->b, data->a);
 	write (1, "pb\n", 3);
 	data->bench->pb++;
 	data->bench->total++;
-	b->size++;
-	a->size--;
+	data->b->size++;
+	data->a->size--;
 }

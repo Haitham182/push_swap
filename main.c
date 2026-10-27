@@ -35,11 +35,11 @@ static void	run_sort(t_data *data)
 		return ;
 	}
 	if (data->a->size == 2)
-		op_sa(data->a, data);
+		op_sa(data);
 	else if (data->a->size <= 3)
-		sort_three(data->a, data);
+		sort_three(data);
 	else if (data->a->size <= 5)
-		sort_five(data->a, data->b, data);
+		sort_five(data);
 	else
 		execute_strategy(data);
 }

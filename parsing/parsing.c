@@ -16,13 +16,13 @@ int	is_flag(char *arg, t_data *data)
 {
 	if (ft_strcmp(arg, "--simple") == 0)
 		return (data->strategy = SIMPLE, 1);
-	if (ft_strcmp(arg, "--medium") == 0)
+	else if (ft_strcmp(arg, "--medium") == 0)
 		return (data->strategy = MEDIUM, 1);
-	if (ft_strcmp(arg, "--complex") == 0)
+	else if (ft_strcmp(arg, "--complex") == 0)
 		return (data->strategy = COMPLEX, 1);
-	if (ft_strcmp(arg, "--adaptive") == 0)
+	else if (ft_strcmp(arg, "--adaptive") == 0)
 		return (data->strategy = ADAPTIVE, 1);
-	if (ft_strcmp(arg, "--bench") == 0) //     what this will dooooo????  ****if there is bench it will calculate disorder ******
+	if (ft_strcmp(arg, "--bench") == 0)
 		return (data->bench_enabled = true, 1);
 	return (0);
 }
@@ -59,7 +59,6 @@ static bool	process_arg(char *arg, t_stack *stack_a)
 	free_split(split);
 	return (true);
 }
-
 bool	parse_args(int argc, char **argv, t_stack *stack_a, t_data *data)
 {
 	int	i;
