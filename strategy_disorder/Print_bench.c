@@ -38,7 +38,7 @@ static void	print_strategy(t_data *data)
 		ft_putstr_fd("Adaptive / ", 2);
 		if (data->disorder < 0.2)
 			ft_putstr_fd("O(n^2)\n", 2);
-		else if (data->disorder > 0.5)
+		else if (data->disorder < 0.5)
 			ft_putstr_fd("O(n√n)\n", 2);
 		else
 			ft_putstr_fd("O(n log n)\n", 2);
