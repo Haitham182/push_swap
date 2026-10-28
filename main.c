@@ -27,7 +27,7 @@ static void	run_sort(t_data *data)
 {
 	if (!data || !data->a || is_sorted(data->a))
 		return ;
-	if (data->bench_enabled || data->strategy == ADAPTIVE)
+	if (data->bench_enabled || data->strategy == ADAPTIVE)// ***** if there is a *bench* written or the *strategy was adaptive* it will calculate disorder ****
 		data->disorder = compute_disorder(data->a);
 	if (data->strategy != ADAPTIVE)
 	{

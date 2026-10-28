@@ -10,7 +10,7 @@ void execute_strategy(t_data *data)
     {
         if (data->disorder < 0.2)
             effective_strategy = SIMPLE;
-        else if (data->disorder > 0.5)
+        else if (data->disorder < 0.5)
             effective_strategy = MEDIUM;
         else
             effective_strategy = COMPLEX;
@@ -18,7 +18,9 @@ void execute_strategy(t_data *data)
 
     if (effective_strategy == SIMPLE)
     {
-        if (data->a->size <= 3)
+        if (data->a->size == 2) // to handle two numbers in --simple
+            op_sa(data);
+        else if (data->a->size <= 3)
             sort_three(data);
         else
             sort_simple(data); 
