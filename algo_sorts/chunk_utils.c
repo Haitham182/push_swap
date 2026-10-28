@@ -65,11 +65,10 @@ void	bring_to_top_b(t_data *data, int target_idx) //بطلع العنصر الم
 
 int	get_chunk_size(int size) // *****  هون مش المفروض يكون جذر الحجم؟؟؟؟؟؟ كيف حاط ارقام ثابته؟  ***********
 {
-	if (size <= 20)
-		return (4);
-	else if (size <= 100)
-		return (15);
-	else if (size <= 500)
-		return (30);
-	return (45);
+	int	x;
+
+	x = 0;
+	while (x * x < size)
+		x++;
+	return (x);
 }

@@ -6,7 +6,7 @@
 /*   By: aborabi <aborabi@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 22:51:21 by aborabi           #+#    #+#             */
-/*   Updated: 2026/10/15 14:18:59 by hmuqasqu         ###   ########.fr       */
+/*   Updated: 2026/10/28 12:39:00 by hmuqasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdbool.h>
 # include <stdlib.h>
+# include <math.h> 
 
 typedef enum e_strategy
 {
@@ -85,12 +86,10 @@ void		rotate(t_stack *stk);
 void		reverse_rot(t_stack *stk);
 long long	count_inversions(t_stack *stack);
 double		compute_disorder(t_stack *stack);
-void		select_strategy(t_data *data);
 void		execute_strategy(t_data *data);
 void		sort_simple(t_data *data);
 void		sort_medium(t_data *data);
 void		sort_complex(t_data *data);
-void		sort_chunk(t_data *data);
 int			get_index(t_data *data, int number);
 int			find_max_index(t_stack *stack);
 void		bring_to_top_b(t_data *data, int target_idx);
@@ -116,6 +115,5 @@ void		ft_putstr_fd(char *s, int fd);
 void		*ft_calloc(size_t num, size_t size);
 char		**ft_split(char const *s, char c);
 size_t		ft_strlen(const char *arr);
-void		sort_complex(t_data *data);
 
 #endif
