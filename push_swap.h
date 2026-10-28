@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdbool.h>
 # include <stdlib.h>
-# include <math.h> 
 
 typedef enum e_strategy
 {
