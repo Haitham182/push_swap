@@ -85,4 +85,3 @@ void	rotate(t_stack *stk)
 	temp->next = NULL;
 	stk->last = temp;
 }
-

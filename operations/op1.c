@@ -20,7 +20,6 @@ void	op_ra(t_data *data)
 	write (1, "ra\n", 3);
 	data->bench->ra++;
 	data->bench->total++;
-
 }
 
 void	op_rb(t_data *data)
@@ -36,6 +35,7 @@ void	op_rb(t_data *data)
 void	op_rr(t_data *data)
 {
 	int	c;
+
 	c = 0;
 	if (data->a && data->a->head && data->a->head->next)
 	{

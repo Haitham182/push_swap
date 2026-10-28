@@ -47,5 +47,3 @@ size_t	ft_strlen(const char *arr)
 		i++;
 	return (i);
 }
-
-

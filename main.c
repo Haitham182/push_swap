@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmuqasqu <hmuqasqu@learner.42.tech>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/28 11:39:37 by hmuqasqu          #+#    #+#             */
+/*   Updated: 2026/10/28 11:39:38 by hmuqasqu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	free_data(t_data *data)
@@ -27,7 +39,7 @@ static void	run_sort(t_data *data)
 {
 	if (!data || !data->a || is_sorted(data->a))
 		return ;
-	if (data->bench_enabled || data->strategy == ADAPTIVE)// ***** if there is a *bench* written or the *strategy was adaptive* it will calculate disorder ****
+	if (data->bench_enabled || data->strategy == ADAPTIVE) // ***** if there is a *bench* written or the *strategy was adaptive* it will calculate disorder ****
 		data->disorder = compute_disorder(data->a);
 	if (data->strategy != ADAPTIVE)
 	{

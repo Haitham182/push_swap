@@ -1,4 +1,4 @@
-	/* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: aborabi <aborabi@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 23:24:39 by aborabi           #+#    #+#             */
-/*   Updated: 2026/10/28 03:11:46 by Haitham          ###   ########.fr       */
+/*   Updated: 2026/10/28 11:43:22 by hmuqasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,19 @@ int	is_flag(char *arg, t_data *data)
 	return (0);
 }
 
-	static bool	parse_token(char *token, t_stack *stack_a)
-	{
-		int		error;
-		long	num;
+static bool	parse_token(char *token, t_stack *stack_a)
+{
+	int		error;
+	long	num;
 
-		error = 0;
-		num = ft_atoi_ps(token, &error);
-		if (error || has_duplicate(stack_a->head, (int)num))//we cast bec mybe the num is bigger than the biggest int
-			return (false);
-		if (!add_node_back(stack_a, (int)num))
-			return (false);
-		return (true);
-	}
+	error = 0;
+	num = ft_atoi_ps(token, &error);
+	if (error || has_duplicate(stack_a->head, (int)num)) //we cast bec mybe the num is bigger than the biggest int
+		return (false);
+	if (!add_node_back(stack_a, (int)num))
+		return (false);
+	return (true);
+}
 
 static bool	process_arg(char *arg, t_stack *stack_a)
 {
@@ -59,6 +59,7 @@ static bool	process_arg(char *arg, t_stack *stack_a)
 	free_split(split);
 	return (true);
 }
+
 bool	parse_args(int argc, char **argv, t_stack *stack_a, t_data *data)
 {
 	int	i;

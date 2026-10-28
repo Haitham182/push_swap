@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_small.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hmuqasqu <hmuqasqu@learner.42.tech>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/28 11:38:44 by hmuqasqu          #+#    #+#             */
+/*   Updated: 2026/10/28 11:38:45 by hmuqasqu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 bool	is_sorted(t_stack *stack)
@@ -34,7 +46,7 @@ void	sort_three(t_data *data)
 		op_sa(data);
 		op_rra(data);
 	}
-	else if (top > mid && mid < bot && top > bot)  // 3 1 2
+	else if (top > mid && mid < bot && top > bot)// 3 1 2
 		op_ra(data);
 	else if (top < mid && mid > bot && top < bot) // 1 3 2 
 	{

@@ -41,7 +41,7 @@ int	ft_strcmp(const char *str1, const char *str2)
 
 bool	add_node_back(t_stack *stack, int num)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	temp = lstnew_node(num);
 	if (!temp)
