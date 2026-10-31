@@ -28,12 +28,7 @@ void	execute_strategy(t_data *data)
 	}
 	if (effective_strategy == SIMPLE)
 	{
-		if (data->a->size == 2) // to handle two numbers in --simple
-			op_sa(data);
-		else if (data->a->size <= 3)
-			sort_three(data);
-		else
-			sort_simple(data);
+		sort_simple(data);
 	}
 	else if (effective_strategy == MEDIUM)
 		sort_medium(data);

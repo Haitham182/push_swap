@@ -37,7 +37,7 @@ static int	init_data(t_data *data)
 
 static void	run_sort(t_data *data)
 {
-	if (!data || !data->a || is_sorted(data->a))
+	if (!data || !data->a || is_sorted(data->a)) // i think we can replace is_sorted with !compute_disorder
 		return ;
 	if (data->bench_enabled || data->strategy == ADAPTIVE) // ***** if there is a *bench* written or the *strategy was adaptive* it will calculate disorder ****
 		data->disorder = compute_disorder(data->a);
@@ -62,7 +62,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
-	if (!init_data(&data))
+	if (!init_data(&data)) //i gave its address bec its not a pointer
 	{
 		free_data(&data);
 		return (1);

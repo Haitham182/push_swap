@@ -64,9 +64,9 @@ long	ft_atoi_ps(const char *str, int *error)
 	i = 0;
 	sign = 1;
 	res = 0;
-	if (!skip_whitespaces_and_sign(str, &i, &sign))
+	if (!skip_whitespaces_and_sign(str, &i, &sign)) // ** i dont think we need it bec split will handle every space **
 		return (*error = 1, 0);
-	limit = 2147483647LL;
+	limit = 2147483647;
 	if (sign == -1)
 		limit = 2147483648LL;
 	while (str[i])
@@ -74,7 +74,7 @@ long	ft_atoi_ps(const char *str, int *error)
 		if (str[i] < '0' || str[i] > '9')
 			return (*error = 1, 0);
 		digit = str[i] - '0';
-		if (res > (limit - digit) / 10)
+		if (res > (limit - digit) / 10) // when we exceed the allowed int
 			return (*error = 1, 0);
 		res = res * 10 + digit;
 		i++;
