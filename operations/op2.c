@@ -63,7 +63,7 @@ void	swap(t_stack *stk)
 	stk->head = stk->head->next;
 	stk->head->prev = NULL;
 	temp->next = stk->head->next;
-	if (temp->next) //to make sure there is more than 2 nodes
+	if (temp->next)
 		stk->head->next->prev = temp;
 	stk->head->next = temp;
 	temp->prev = stk->head;

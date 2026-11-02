@@ -39,21 +39,21 @@ void	sort_three(t_data *data)
 	top = data->a->head->number;
 	mid = data->a->head->next->number;
 	bot = data->a->head->next->next->number;
-	if (top > mid && mid < bot && top < bot) // 2 1 3
+	if (top > mid && mid < bot && top < bot)
 		op_sa(data);
-	else if (top > mid && mid > bot)// 3 2 1 مرتبات عكسي 
+	else if (top > mid && mid > bot)
 	{
 		op_sa(data);
 		op_rra(data);
 	}
-	else if (top > mid && mid < bot && top > bot)// 3 1 2
+	else if (top > mid && mid < bot && top > bot)
 		op_ra(data);
-	else if (top < mid && mid > bot && top < bot) // 1 3 2 
+	else if (top < mid && mid > bot && top < bot)
 	{
 		op_sa(data);
 		op_ra(data);
 	}
-	else if (top < mid && mid > bot && top > bot) // 2 3 1
+	else if (top < mid && mid > bot && top > bot)
 		op_rra(data);
 }
 

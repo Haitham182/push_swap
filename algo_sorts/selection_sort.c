@@ -73,7 +73,7 @@ void	sort_simple(t_data *data)
 	while (data->a->size > 3)
 	{
 		min_pos = find_min_index(data->a);
-		if (min_pos < 0) //لانه الfind_min_index   ممكن ترجع -1
+		if (min_pos < 0)
 			return ;
 		bring_to_top_a(data, min_pos);
 		op_pb(data);

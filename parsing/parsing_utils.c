@@ -27,7 +27,7 @@ void	free_split(char **split)
 	free(split);
 }
 
-bool	has_duplicate(t_node *node, int num)//why not stack instead of node??
+bool	has_duplicate(t_node *node, int num)
 {
 	while (node)
 	{

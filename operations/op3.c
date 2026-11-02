@@ -55,7 +55,6 @@ void	op_pa(t_data *data)
 	write (1, "pa\n", 3);
 	data->bench->pa++;
 	data->bench->total++;
-	//a should have the size  from the first
 	data->a->size++;
 	data->b->size--;
 }

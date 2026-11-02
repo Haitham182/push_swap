@@ -22,7 +22,7 @@ int	is_flag(char *arg, t_data *data)
 		return (data->strategy = COMPLEX, 1);
 	else if (ft_strcmp(arg, "--adaptive") == 0)
 		return (data->strategy = ADAPTIVE, 1);
-	if (ft_strcmp(arg, "--bench") == 0) //  ****if there is bench it will calculate disorder ******
+	if (ft_strcmp(arg, "--bench") == 0)
 		return (data->bench_enabled = true, 1);
 	return (0);
 }
@@ -34,7 +34,7 @@ static bool	parse_token(char *token, t_stack *stack_a)
 
 	error = 0;
 	num = ft_atoi_ps(token, &error);
-	if (error || has_duplicate(stack_a->head, (int)num)) //we cast bec mybe the num is bigger than the biggest int
+	if (error || has_duplicate(stack_a->head, (int)num))
 		return (false);
 	if (!add_node_back(stack_a, (int)num))
 		return (false);
@@ -53,7 +53,7 @@ static bool	process_arg(char *arg, t_stack *stack_a)
 	while (split[j])
 	{
 		if (!parse_token(split[j], stack_a))
-			return (free_split(split), false);// if we do "15 aa 16" it will be handle and return false 
+			return (free_split(split), false);
 		j++;
 	}
 	free_split(split);

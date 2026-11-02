@@ -6,7 +6,7 @@
 /*   By: aborabi <aborabi@learner.42.tech>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/14 17:14:17 by aborabi           #+#    #+#             */
-/*   Updated: 2026/10/14 17:14:49 by aborabi          ###   ########.fr       */
+/*   Updated: 2026/11/02 14:05:42 by hmuqasqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ bool	add_node_back(t_stack *stack, int num)
 	temp = lstnew_node(num);
 	if (!temp)
 		return (false);
-	if (!stack->head) //اول حاله لما ما يكون في نودز اصلا 
+	if (!stack->head)
 	{
 		stack->head = temp;
 		stack->last = temp;
 	}
-	else // اذا كان في نود
+	else
 	{
 		stack->last->next = temp;
 		temp->prev = stack->last;
