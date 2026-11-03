@@ -122,9 +122,6 @@ The actual strategy depends on the implementation.
     ├── Print_bench.c
     └── strategy.c
 ```
-
-> The structure above is an example. Adapt it to match your actual project files.
-
 ---
 
 ## ⚙️ Compilation
@@ -187,9 +184,6 @@ pb
 ra
 pa
 ```
-
-> The output above is illustrative. Actual instructions depend on the sorting algorithm and implementation.
-
 ---
 
 ## 🧪 Testing
