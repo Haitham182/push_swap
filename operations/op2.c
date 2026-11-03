@@ -71,7 +71,7 @@ void	swap(t_stack *stk)
 		stk->last = temp;
 }
 
-void	  rotate(t_stack *stk)
+void	rotate(t_stack *stk)
 {
 	t_node	*temp;
 
