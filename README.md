@@ -1713,11 +1713,10 @@ Consequently, the total operation count depends on the number of zero bits acros
 ## 📚 Resources
 
 - [42 Push_swap Subject](https://cdn.intra.42.fr/pdf/pdf/960/push_swap.en.pdf) — Official project subject and requirements.
-- [GeeksforGeeks – Radix Sort](https://www.geeksforgeeks.org/dsa/radix-sort/) — Understanding Radix Sort.
-- [GeeksforGeeks – Selection Sort](https://www.geeksforgeeks.org/dsa/selection-sort/) — Understanding Selection Sort.
-- [GeeksforGeeks – Linked Lists](https://www.geeksforgeeks.org/c/linked-list-in-c/) — Learning linked lists in C.
-- [cppreference](https://en.cppreference.com/w/c) — C language documentation.
-- [42 Norminette](https://github.com/42School/norminette) — Official Norminette repository.
+- [Youtube – Radix Sort](https://www.youtube.com/watch?v=XiuSW_mEn7g) — Understanding Radix Sort.
+- [ProgrammingAdvice@](https://www.programmingadvices.com/p/12-data-structures-level1) — Understanding selection Sort.
+- [Medium](https://satyadeepmaheshwari.medium.com/sorting-large-datasets-with-limited-memory-the-chunked-merge-sort-approach-318275275c81) — Understanding chunk Sort.
+- [w3schools](https://www.w3schools.com/) — Understanding chunk Sort.
 
 ## 📊 Algorithm Complexity Comparison
 
