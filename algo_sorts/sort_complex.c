@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap.h"
+
 static void	radix_pass(t_data *data, int size, int max_bits)
 {
 	int	i;

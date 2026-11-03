@@ -48,7 +48,7 @@ static int	skip_whitespaces_and_sign(const char *str, int *i, int *sign)
 			*sign = -1;
 		(*i)++;
 	}
-	if (!str[*i]) //is this to make sure there is a number after the sign?
+	if (!str[*i])
 		return (0);
 	return (1);
 }
@@ -64,7 +64,7 @@ long	ft_atoi_ps(const char *str, int *error)
 	i = 0;
 	sign = 1;
 	res = 0;
-	if (!skip_whitespaces_and_sign(str, &i, &sign)) // ** i dont think we need it bec split will handle every space **
+	if (!skip_whitespaces_and_sign(str, &i, &sign))
 		return (*error = 1, 0);
 	limit = 2147483647;
 	if (sign == -1)
@@ -74,7 +74,7 @@ long	ft_atoi_ps(const char *str, int *error)
 		if (str[i] < '0' || str[i] > '9')
 			return (*error = 1, 0);
 		digit = str[i] - '0';
-		if (res > (limit - digit) / 10) // when we exceed the allowed int
+		if (res > (limit - digit) / 10)
 			return (*error = 1, 0);
 		res = res * 10 + digit;
 		i++;

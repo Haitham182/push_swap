@@ -34,9 +34,9 @@ static bool	parse_token(char *token, t_stack *stack_a)
 
 	error = 0;
 	num = ft_atoi_ps(token, &error);
-	if (error || has_duplicate(stack_a->head, (int)num))
+	if (error || has_duplicate(stack_a->head, num))
 		return (false);
-	if (!add_node_back(stack_a, (int)num))
+	if (!add_node_back(stack_a, num))
 		return (false);
 	return (true);
 }

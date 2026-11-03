@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int	find_max_index(t_stack *stack) // برجع مكان اكبر عنصر بالاراي
+int	find_max_index(t_stack *stack)
 {
 	t_node	*curr;
 	int		max_val;
@@ -38,7 +38,7 @@ int	find_max_index(t_stack *stack) // برجع مكان اكبر عنصر بال
 	return (max_idx);
 }
 
-void	bring_to_top_b(t_data *data, int target_idx) //بطلع العنصر المطلوب لاول الستاك
+void	bring_to_top_b(t_data *data, int target_idx)
 {
 	int	size;
 
