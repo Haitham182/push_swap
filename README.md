@@ -21,7 +21,11 @@ This project focuses on algorithm design, data structures, optimization, complex
 
 ---
 
+## 📖 Instructions
 
+- [42 Push_swap Subject](https://cdn.intra.42.fr/pdf/pdf/960/push_swap.en.pdf) — Official project requirements and allowed operations.
+- [42 GitHub](https://github.com/42School) — Official 42 repositories.
+- [42 Norminette](https://github.com/42School/norminette) — 42 coding standards and Norminette rules.
 
 ## 🎯 Project Objectives
 
