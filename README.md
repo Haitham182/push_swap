@@ -1,8 +1,6 @@
 *This project was created as part of the 42 curriculum by **hmuqasqu** and **aborabi**.*
 
-![42 Badge](https://img.shields.io/badge/42-push__swap-000000?style=flat&logo=42&logoColor=white)
-![Language](https://img.shields.io/badge/Language-C-blue?style=flat&logo=c)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=flat)
+
 
 ## 📖 Description
 
@@ -23,9 +21,75 @@ This project focuses on algorithm design, data structures, optimization, complex
 
 ## 📖 Instructions
 
-- [42 Push_swap Subject](https://cdn.intra.42.fr/pdf/pdf/960/push_swap.en.pdf) — Official project requirements and allowed operations.
-- [42 GitHub](https://github.com/42School) — Official 42 repositories.
-- [42 Norminette](https://github.com/42School/norminette) — 42 coding standards and Norminette rules.
+## Instructions
+
+### Requirements
+
+- A C compiler (`cc`) and `make`
+- Linux or macOS
+- Optional: `valgrind`, and the `checker_linux` binary from the project page to verify the output
+
+### Build
+
+```sh
+make        # builds libft, ft_printf, then push_swap
+make clean  # removes object files
+make fclean # removes object files and the binaries/libraries
+make re     # fclean + make
+```
+
+Everything is compiled with `-Wall -Wextra -Werror`. Running `make` twice does not relink.
+
+### Run
+
+```sh
+./push_swap [flags] numbers...
+```
+
+| Flag | Meaning |
+|---|---|
+| *(none)* | Same as `--adaptive` |
+| `--simple` | Force the O(n²) algorithm |
+| `--medium` | Force the O(n√n) algorithm |
+| `--complex` | Force the O(n log n) algorithm |
+| `--adaptive` | Pick the algorithm from the measured disorder |
+| `--bench` | After sorting, print statistics to **stderr** |
+
+Numbers can be passed as separate arguments or inside one quoted string, or both:
+
+```sh
+./push_swap 3 2 1
+./push_swap "3 2 1"
+./push_swap "3 2" 1
+```
+
+### Examples
+
+```sh
+$ ./push_swap 2 1 3 6 5 8
+ra
+pb
+rra
+pb
+pb
+ra
+pb
+sa
+pa
+pa
+pa
+pa
+
+$ ./push_swap --bench 4 67 3 87 23 > /dev/null
+[bench] disorder: 40.00%
+[bench] strategy: Adaptive / O(n√n)
+[bench] total_ops: 13
+[bench] sa: 0 sb: 0 ss: 0 pa: 5 pb: 5
+[bench] ra: 0 rb: 2 rr: 0 rra: 0 rrb: 1 rrr: 0
+
+$ ./push_swap 1 2 abc
+Error
+
 
 ## 🎯 Project Objectives
 
@@ -95,6 +159,14 @@ The general workflow is:
 The program uses a strategy selection mechanism to choose an appropriate sorting approach depending on the disorder of the input.
 
 ---
+
+## 📚 Resources
+
+- [42 Push_swap Subject](https://cdn.intra.42.fr/pdf/pdf/960/push_swap.en.pdf) — Official project subject and requirements.
+- [Youtube – Radix Sort](https://www.youtube.com/watch?v=XiuSW_mEn7g) — Understanding Radix Sort.
+- [ProgrammingAdvice@](https://www.programmingadvices.com/p/12-data-structures-level1) — Understanding selection Sort.
+- [Medium](https://satyadeepmaheshwari.medium.com/sorting-large-datasets-with-limited-memory-the-chunked-merge-sort-approach-318275275c81) — Understanding chunk Sort.
+- [w3schools](https://www.w3schools.com/) — Understanding chunk Sort.
 
 ## 🔄 Allowed Operations
 
@@ -890,33 +962,6 @@ The program must also avoid generating unnecessary operations when the input is 
 
 ---
 
-## 🧱 Data Structures
-
-Our implementation uses linked-list-based stacks.
-
-Each node stores the integer value, its corresponding index, and pointers to neighboring nodes.
-
-Conceptually:
-
-```c
-typedef struct s_node
-{
-    int             number;
-    int             index;
-    struct s_node   *next;
-    struct s_node   *prev;
-}   t_node;
-```
-
-The stack maintains information such as:
-
-- `head`: Pointer to the first node.
-- `last`: Pointer to the last node.
-- `size`: Number of elements in the stack.
-
-Using a doubly linked list provides access to both the next and previous nodes.
-
-This is particularly useful when implementing rotations and reverse rotations.
 
 ---
 
@@ -1024,9 +1069,6 @@ ARG="4 67 3 87 23"
 ./push_swap $ARG | ./checker_linux $ARG
 ```*This project was created as part of the 42 curriculum by **hmuqasqu** and **aborabi**.*
 
-![42 Badge](https://img.shields.io/badge/42-push__swap-000000?style=flat&logo=42&logoColor=white)
-![Language](https://img.shields.io/badge/Language-C-blue?style=flat&logo=c)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=flat)
 
 ## 📖 Description
 
@@ -1710,13 +1752,6 @@ Consequently, the total operation count depends on the number of zero bits acros
 
 ---
 
-## 📚 Resources
-
-- [42 Push_swap Subject](https://cdn.intra.42.fr/pdf/pdf/960/push_swap.en.pdf) — Official project subject and requirements.
-- [Youtube – Radix Sort](https://www.youtube.com/watch?v=XiuSW_mEn7g) — Understanding Radix Sort.
-- [ProgrammingAdvice@](https://www.programmingadvices.com/p/12-data-structures-level1) — Understanding selection Sort.
-- [Medium](https://satyadeepmaheshwari.medium.com/sorting-large-datasets-with-limited-memory-the-chunked-merge-sort-approach-318275275c81) — Understanding chunk Sort.
-- [w3schools](https://www.w3schools.com/) — Understanding chunk Sort.
 
 ## 📊 Algorithm Complexity Comparison
 
