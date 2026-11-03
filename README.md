@@ -1221,7 +1221,8 @@ Our implementation includes several sorting approaches.
 
 Small sorting handles inputs containing only a few elements.
 
-For very small stacks, implementing a complicated algorithm is unnecessary. Instead, we use simple conditional logic to identify the current arrangement and apply the required
+For very small stacks, implementing a complicated algorithm is unnecessary. Instead, we use simple conditional logic to identify the current arrangement and apply the requiredA detailed explanation and justification of the algorithms selected for this project must
+also be included
  operations.
 
 For example, with three elements, there are only six possible permutations:
