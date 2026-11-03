@@ -28,7 +28,7 @@ typedef enum e_strategy
 typedef struct s_node
 {
 	int				number;
-	int				index; // ** why? **
+	int				index;
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
